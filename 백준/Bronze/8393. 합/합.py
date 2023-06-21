@@ -1,8 +1,6 @@
-sum =0
+num_list =[]
 num = int(input())
-while True:
-    sum += num
-    num -= 1
-    if num == 0:
-        break
-print(sum)
+for i in range(1,num+1):
+    num_list.append(i)
+
+print(sum(num_list))
