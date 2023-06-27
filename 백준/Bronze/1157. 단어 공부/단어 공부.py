@@ -1,18 +1,14 @@
+#set으로 풀기
 alphabet = input().upper()
-count_dict = {}
+set_alphabet = set(alphabet)
 
-for char in alphabet:
-    if char in count_dict:
-        count_dict[char] += 1
-    else:
-        count_dict[char] = 1
-
-max_count = max(count_dict.values())
-largest_alphabets = [char for char, count in count_dict.items() if count == max_count]
-
-if len(largest_alphabets) == 1:
-    largest_alphabet = largest_alphabets[0]
-else:
-    largest_alphabet = "?"
-
+max_count =0
+largest_alphabet=""
+for char in set_alphabet:
+    if alphabet.count(char) >max_count:
+        max_count = alphabet.count(char)
+        largest_alphabet = char
+    elif alphabet.count(char)  == max_count:
+        if largest_alphabet != char:
+            largest_alphabet ="?"
 print(largest_alphabet)
